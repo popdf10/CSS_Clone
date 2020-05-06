@@ -1,0 +1,27 @@
+{
+  "name": "scss-masterclass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nomadcoders/scss-masterclass",
+  "author": "Nicolás Serrano Arévalo <itnico.las.me@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "browserslist": {
+    "browsers": [
+      "last 2 versions"
+    ]
+  }
+}
