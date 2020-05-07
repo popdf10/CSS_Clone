@@ -1,2 +1,133 @@
 @import "_variables";
 @import "_elements";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: 40px;
+}
+
+.header {
+  width: 100%;
+  background-color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 1px 10px;
+  }
+  nav {
+    ul {
+      display: flex;
+      li {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        &:nth-child(3n + 1) {
+          span {
+            background-color: #e4c564;
+          }
+        }
+        &:nth-child(3n + 2) {
+          span {
+            background-color: #56854a;
+          }
+        }
+        &:nth-child(3n + 3) {
+          span {
+            background-color: #dc534d;
+          }
+        }
+        span {
+          margin-right: 5px;
+          width: 15px;
+          height: 15px;
+          background-color: red;
+          border-radius: 50%;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 55vh;
+  .post {
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    .post__header,
+    footer {
+      display: flex;
+      justify-content: space-between;
+      letter-spacing: 1px;
+    }
+    &:nth-child(3n + 1) {
+      background-color: #4e7e42;
+    }
+    &:nth-child(3n + 2) {
+      background-color: #c9a996;
+    }
+    &:nth-child(3n + 3) {
+      background-color: #eba170;
+    }
+    .post__content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        letter-spacing: 2px;
+        font-size: 26px;
+        text-align: center;
+        line-height: 1.3;
+      }
+      .invisible {
+        display: none;
+        height: 100%;
+        width: 100%;
+        background-image: url("https://images.prismic.io/beige/9439d5d2-2221-443c-a804-df33cc849e06_Beige-Patchwork-Quilt-Marie-Outfit-Vintage-Chanel-2.JPG?auto=compress,format?auto=format,compress&q=60&w=300");
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+    &:hover {
+      .post__content {
+        .visible {
+          display: none;
+        }
+        .invisible {
+          display: block;
+        }
+      }
+    }
+  }
+}
